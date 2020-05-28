@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            text-align: center;
+        }
+        .img{
+            width: 100vw;
+            text-align: center;
+        }
+        .content-table{
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 100vw;
+        }
+        .content-table thead tr{
+            background-color: rgb(245, 248, 44);
+            text-align: left;
+            font-weight: bold;
+        }
+        .content-table th,
+        .content-table td{
+            padding: 12px 12px;
+            text-align: left;
+        }
+        .content-table tr{
+            border-bottom: 1px solid #dddddd;
+        }
+        .content-table tr:last-of-type{
+            border-bottom: 2px solid rgb(245, 248, 44);
+        }
+        tr th{
+            height: 20px;
+            width: 20px;
+        }
+        .red{
+            background-color: #ec1c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <img src='https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/5c5b0c10-b1a9-4855-9134-d8ada11399a6/201804060010_13164.jpg' width="320" height="205">
+    </div>
+    <table class="content-table">   
+        <thead>
+            {% for Nome, Preço in lista %}
+            {%if Preço > 5.00 %}   
+                 
+                <tr>
+                    
+                    <th>{{Nome}}</th>
+                    <th class="red">{{Preço}}</th>
+                </tr>
+            {%else%}
+                <tr>
+                    <th>{{Nome}}</th>
+                    <th>{{Preço}}</th>
+                </tr>
+            {%endif%}
+            {%endfor%}
+        </thead>
+    </table>
+</body>
+</html>
